@@ -1,0 +1,34 @@
+ALGORITHM read_sentence
+VAR
+    i , words, vowels , characters : INTEGER := 0;
+    sentence : STRING;
+BEGIN
+    sentence := "some text."
+    WHILE ( sentence[i] <> "." ) DO
+
+            IF (sentence[i] = "a" or sentence[i] = "A" or
+                sentence[i] = "e" or sentence[i] = "E" or
+                sentence[i] = "i" or sentence[i] = "I" or
+                sentence[i] = "o" or sentence[i] = "O" or
+                sentence[i] = "u" or sentence[i] = "U" or
+                sentence[i] = "y" or sentence[i] = "Y" or
+            ) THEN
+                vowels := vowels + 1;
+            END_IF
+
+            IF (sentence[i] = " ") THEN
+                words := words + 1;
+            END_IF
+
+            IF (sentence[i] <> " ") THEN
+                characters := characters + 1 
+            END_IF
+
+        i := i+1;
+
+    END_WHILE
+    words := words + 1;
+    Write(words);
+    Write(vowels);
+    Write(characters); 
+END
